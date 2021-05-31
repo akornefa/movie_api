@@ -47,6 +47,7 @@ let myMovies = [
     }
 ];
 
+
 app.get('/movies', (req, res) => {
     res.json(myMovies);
 });
@@ -55,7 +56,16 @@ app.get('/', (req, res) => {
     res.send('Welcome to myFlix!');
 });
 
+app.use(express.static('public'));
 
+app.get('/documentation.html', (req, res) => {
+    res.sendFile('/public/documentation.html', { root: __dirname });
+  });
+
+  app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Error!');
+  });
 
 app.listen(8080, () => {
     console.log('Your app is listening on port 8080');
