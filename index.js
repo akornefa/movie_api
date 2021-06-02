@@ -47,9 +47,49 @@ let myMovies = [
     }
 ];
 
-
+//return list of all movies to user
 app.get('/movies', (req, res) => {
     res.json(myMovies);
+});
+
+//return data about a single movie
+app.get('/movies/:title', (req, res) => {
+    res.send('JSON data about a single movie');
+});
+
+//data about a genre 
+app.get('/movies/:genre', (req, res) => {
+    res.send('List of movies under specified genre');
+});
+
+//data about a director
+app.get('/movies/:director-name', (req, res) => {
+    res.send('JSON data holding information about a director.');
+});
+
+//new users register
+app.post('/users/register', (req, res) => {
+    res.send('return whether registration was successful');
+});
+
+//user updates info
+app.put('/users/:username', (req, res) => {
+    res.send('return whether update was successful');
+});
+
+//user adds movie to favorites
+app.put('/users/:title', (req, res) => {
+    res.send('return whether addition was successful');
+});
+
+//user removes movie from favorites
+app.delete('/users/:title', (req, res) => {
+    res.send('return whether removal of movie was successful');
+});
+
+//user to be deregistered
+app.delete('/users/:email', (req, res) => {
+    res.send('return whether deregistration of user\'s email address was successful');
 });
 
 app.get('/', (req, res) => {
