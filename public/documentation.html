@@ -11,7 +11,116 @@
     <p>To build the server-side component of a “movies” web application. 
         The web application will provide users with access to information about different 
         movies, directors, and genres. Users will be able to sign up, update their personal 
-        information, and create a list of their favorite movies.
-    </p>
+        information, and create a list of their favorite movies.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Business Logic</th>
+                <th>URL</th>
+                <th>HTTP Method</th>
+                <th>Request body data format</th>
+                <th>Response body data format</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Return a list of ALL movies to the user</td>
+                <td>/movies</td>
+                <td>GET</td>
+                <td>none</td>
+                <td>A JSON object holding data about all movies</td>
+            </tr>
+            <tr>
+                <td>Return data about a single movie by title to the user</td>
+                <td>/movies/[title]</td>
+                <td>GET</td>
+                <td>none</td>
+                <td>A JSON object holding data (description, genre, director, image URL, whether it’s featured or not) about a single movie by title to the user. <br>
+               Example:
+                    {
+                        description: "A 2000 romantic comedy-drama film based on the 1999 novel Chocolat by the English author, Joanne Harris."
+                        genre: "drama",
+                        director: "Lasse Hallstrom",
+                        image URL: "https://en.wikipedia.org/wiki/Chocolat_(2000_film)#/media/File:Chocolat_sheet.jpg"
+                        featured: "yes"
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>Return data about a genre</td>
+                <td>/movies/[genre]</td>
+                <td>GET</td>
+                <td>none</td>
+                <td>A JSON object holding data about movies under the given genre.</td>
+            </tr>
+            <tr>
+                <td>Return data about a director</td>
+                <td>/movies/[director-name]</td>
+                <td>GET</td>
+                <td>none</td>
+                <td>A JSON object holding data (bio, birth year, death year) about a director. <br>
+                    Example:
+                    {
+                        name: "Lasse Hallstrom",
+                        bio: "Lars Sven "Lasse" Hallström is a Swedish film director",
+                        birth year: "1946 ",
+                        death year: "n/a"
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>Register new user</td>
+                <td>/users/register</td>
+                <td>POST</td>
+                <td>A JSON object holding data about a new user. <br>
+                Example:
+                {
+                    username: "aakyea",
+                    password: "sowej123!",
+                    birth year: "1990"
+                }
+                </td>
+                <td>A JSON object holding data about the user who was just added, including an ID. <br>
+                Example: 
+                {
+                    id: 3,
+                    email: "aakyea@gmail.com"
+                    username: "aakyea",
+                    password: "sowej123!",
+                    birth year: "1990"
+                }
+                </td>
+            </tr>
+            <tr>
+                <td>Allow users to update their user info (username)</td>
+                <td>/users/[username]</td>
+                <td>PUT</td>
+                <td>none</td>
+                <td>A text message indicating whether their information has been added</td>
+            </tr>
+            <tr>
+                <td>Allow users to add a movie to their list of favorites</td>
+                <td>/users/[title]</td>
+                <td>PUT</td>
+                <td>none</td>
+                <td>A text message indicating whether the movies was successfully added</td>
+            </tr>
+            <tr>
+                <td>Allow users to remove a movie from their list of favorites</td>
+                <td>/users/[title]</td>
+                <td>DELETE</td>
+                <td>none</td>
+                <td>A text message indicating whether the movies was successfully deleted</td>
+            </tr>
+            <tr>
+                <td>Allow existing users to deregister</td>
+                <td>/users/[email]</td>
+                <td>DELETE</td>
+                <td>none</td>
+                <td>A text message indicating whether the user's email has been successfully deregistered.</td>
+            </tr>
+
+        </tbody>
+    </table>
 </body>
 </html>
