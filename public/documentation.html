@@ -55,7 +55,7 @@
             </tr>
             <tr>
                 <td>Return data about a director</td>
-                <td>/movies/[director-name]</td>
+                <td>/movies/director/[name]</td>
                 <td>GET</td>
                 <td>none</td>
                 <td>A JSON object holding data (bio, birth year, death year) about a director. <br>
@@ -93,28 +93,28 @@
             </tr>
             <tr>
                 <td>Allow users to update their user info (username)</td>
-                <td>/users/[username]</td>
+                <td>/users/username/[username]</td>
                 <td>PUT</td>
                 <td>none</td>
                 <td>A text message indicating whether their information has been added</td>
             </tr>
             <tr>
                 <td>Allow users to add a movie to their list of favorites</td>
-                <td>/users/[title]</td>
+                <td>/users/title/[title]</td>
                 <td>PUT</td>
                 <td>none</td>
                 <td>A text message indicating whether the movies was successfully added</td>
             </tr>
             <tr>
                 <td>Allow users to remove a movie from their list of favorites</td>
-                <td>/users/[title]</td>
+                <td>/users/title/[title]</td>
                 <td>DELETE</td>
                 <td>none</td>
                 <td>A text message indicating whether the movies was successfully deleted</td>
             </tr>
             <tr>
                 <td>Allow existing users to deregister</td>
-                <td>/users/[email]</td>
+                <td>/users/email/[email]</td>
                 <td>DELETE</td>
                 <td>none</td>
                 <td>A text message indicating whether the user's email has been successfully deregistered.</td>
