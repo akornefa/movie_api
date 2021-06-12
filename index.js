@@ -1,6 +1,17 @@
 const express = require('express'),
 morgan = require('morgan');
+const bodyParser = require('body-parser');
 const app = express();
+app.use(bodyParser.json());
+
+
+const mongoose = require('mongoose');
+const Models = require('./models.js');
+
+const Movies = Models.Movie;
+const Users = Models.User;
+
+mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use(morgan('common'));
 
