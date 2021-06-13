@@ -10,10 +10,12 @@ let movieSchema = mongoose.Schema({
     Director: {
         Name: String, 
         Bio: String
-    }
+    },
+    ImagePath: String,
+    Featured: Boolean
 });
 
-let UserSchema = mongoose.Schema({
+let userSchema = mongoose.Schema({
     Username: {type: String, required: true},
     Password: {type: String, required: true},
     Email: {type: String, required: true},
