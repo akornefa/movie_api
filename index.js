@@ -19,6 +19,12 @@ mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, 
 
 app.use(morgan('common'));
 
+// Implementing CORs for all domains
+
+const cors = require('cors');
+app.use(cors());
+
+
 //return list of all movies to user
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find()
