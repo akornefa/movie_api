@@ -228,6 +228,7 @@ app.get('/documentation.html', (req, res) => {
     res.status(500).send('Error!');
   });
 
-app.listen(8080, () => {
-    console.log('Your app is listening on port 8080');
-});
+  const port = process.env.PORT || 8080;
+  app.listen(port, '0.0.0.0',() => {
+   console.log('Listening on Port ' + port);
+  });
