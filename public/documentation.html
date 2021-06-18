@@ -56,7 +56,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Return data about a genre</td>
+                <td>Return data about movies under a given genre</td>
                 <td>/movies/genre/[genre]</td>
                 <td>GET</td>
                 <td>none</td>
@@ -81,11 +81,11 @@
                 </td>
             </tr>
             <tr>
-                <td>Return data about a director</td>
+                <td>Return data about movies by a specific director</td>
                 <td>/movies/director/[name]</td>
                 <td>GET</td>
                 <td>none</td>
-                <td>A JSON object holding data (bio, birth year, death year) about a director. <br>
+                <td>A JSON object holding data about movies by a specific director. <br>
                     Example:
                     {
                         "Genre": {
@@ -160,14 +160,14 @@
                 <td>/users/[username]/movies/[MovieId]</td>
                 <td>DELETE</td>
                 <td>none</td>
-                <td>A JSON object holding data about the user with a new list of favorite movies.</td>
+                <td>A JSON object holding data about the user with an updated list of favorite movies.</td>
             </tr>
             <tr>
                 <td>Allow existing users to deregister</td>
                 <td>/users/[username]</td>
                 <td>DELETE</td>
                 <td>none</td>
-                <td>A text message indicating whether the user's email has been successfully deregistered.</td>
+                <td>A text message indicating whether the user has been successfully deregistered.</td>
             </tr>
 
         </tbody>
