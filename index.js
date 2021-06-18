@@ -212,6 +212,7 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
     });
 });
 
+//myflix homepage
 app.get('/', (req, res) => {
     res.send('Welcome to myFlix!');
 });
