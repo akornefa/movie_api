@@ -3,6 +3,10 @@ const express = require('express'),
 const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
+// Implementing CORs for all domains
+const cors = require('cors');
+app.use(cors());
+
 let auth = require('./auth')(app);
 const passport = require('passport');
 require('./passport');
@@ -20,10 +24,6 @@ mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnified
 
 app.use(morgan('common'));
 
-// Implementing CORs for all domains
-
-const cors = require('cors');
-app.use(cors());
 
 //import Express Validator library
 const { check, validationResult } = require('express-validator');
